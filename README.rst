@@ -98,15 +98,118 @@ And what about [16; 64[
 - 61, 23
 - 63, 95
 
-In observing those values, we can see an interesting property.
+Repetitive values
+-----------------
 
-The maximal value is always the last one (23 for 15, and 95 for 63). Then, maxximal values decreases two by two (59, 55, 51, 47, 43, 39, 35, 31, 27, 23, 19). And this is the same for the previous space (15, 11, 7) with always a difference of 6.
+In observing those values, we can see an interesting property about proportionality between two spaces.
+
+The maximal value is always the last one (23 for 15, and 95 for 63). Then, maximal values decreases two by two (63, 59, 55, 51, 47, 43, 39, 35, 31, 27, 23, 19). And this is the same for the previous space (15, 11, 7) with always a difference of 6.
+
+This sequence always ends on 5 (proove it).
 
 So, recursively, this behavior will be the same whatever spaces and check a part of the conjecture.
 
-All other values stay in this space wich is a solution for itself and lower spaces.
+Sub-sequence
+------------
 
-Therefore, recursively, all values of any space check the conjecture.
+Now we saw a recursive behaviour with half values, let's see other ones.
+
+Let's focus on 5, 9 and 13 in [4; 16[
+
+In this set, we see:
+
+- 5 becoming 1,
+- 9 becoming 7,
+- 13 becoming 5.
+
+Differences between all is 4, like the inferior bound.
+
+Corresponding values in the next set are:
+
+- 21 becoming 1.
+- 37 becoming 7.
+- 53 becoming 5.
+
+Difference between all is 16, like the inferior bound. That's right, proportions are keept, and solutions are parts of the previous set. And initial values are 4 * old + 1 (21 = 5 * 4 + 1).
+
+Now, let's analyse values of 17, between 21 and 37 and between 37 and 53, without simple solutions.
+
+- 17 becomes 13.
+- *21 becomes 1.*
+- 25 becomes 19.
+- 29 becomes 11.
+- 33 becomes 25.
+- *37 becomes 7.*
+- 41 becomes 31.
+- 45 becomes 17.
+- 49 becomes 37.
+- *53 becomes 5.*
+- 57 becomes 43.
+- 61 becomes 23.
+
+The first thing we can see are values which successively increase and decrease, in opposition of the previous set (1, 7, 5).
+
+Then, we see that:
+
+- 13 + 6 = 19
+- 19 + 6 = 25
+- 25 + 6 = 31
+- 31 + 6 = 37
+- 37 + 6 = 43.
+
+This constitute a new sequence.
+
+What about:
+
+1, 11, 7, 17, 5 and 23 ?
+
+The same about 11, 17 and 23:
+
+- 11 + 6 = 17
+- 17 + 6 = 23
+
+Therefore, four by four, we have the same logic which is a serie of addition of 6.
+
+And 1, 7, 5 left. 7 is 1 + 6.
+
+65, 49
+67, 101
+69, 13*
+71, 107
+73, 55
+75, 113
+77, 29*
+79, 119
+81, 61
+83, 125
+85, 1*
+87, 131
+89, 67
+91, 137
+93, 35*
+95, 143
+97, 73
+99,
+101, 19
+
+This time, we recover a sequence of addition by 6 for
+
+- two by two: 67, 71, 75, ...
+- four by four: 65, 73, 81, 89, 97, ...
+
+and a problem exists for 69, 77, 85 and 93 which are solutions of the old set.
+
+For example:
+
+- 25 * 4 + 1 = 101 like previously.
+- 17 * 4 + 1 = 69
+- 21 * 4 + 1 = 85
+
+Whatever sets of [2^n; 2^n+1[, we find the same sequences and the same logic of application of the 3*n + 1.
+
+...
+
+All values have solution in analyzed spaces, and the behavior is totally proportional in spaces where values are 2^n bigger (n is the difference level of spaces). Then proportionally, all spaces have solutions, although the pivot which grows quietly of pn = (pn-1 * 2 + 1) * 2 + 1 in a space of 2^n, 2^n+2.
 
 Thanks to the serie Pn, the conjecture is true.
 
