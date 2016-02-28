@@ -144,14 +144,3 @@ if __name__ == '__main__':
 
     for index, sequence in enumerate(sequences):
         print('{0}: {1}'.format(index, sequence))
-        #if index != 0:
-            #print(sequences[index - 1].fprct / max(1, sequence.fprct))
-
-    from pylab import *
-#    ion()
-    plot([1,2,3])
-    xlabel('hi mom')
-
-    pivots = pivots(x)
-
-    print(pivots)

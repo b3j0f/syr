@@ -217,4 +217,4 @@ Thanks to the serie Pn, the conjecture is true.
 Conclusion
 ----------
 
-I learned this problem is incredibly hard and we don't have tools to solve it. What I want to say is, if you don't understand the problem, simplify it. That's all !
+I heared this problem was incredibly hard and we don't have tools to solve it. What I want to say is, if you don't understand the problem, simplify it. That's all !
