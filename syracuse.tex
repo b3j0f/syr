@@ -1,0 +1,260 @@
+\documentclass{book}
+
+\usepackage{amsmath}
+\usepackage[latin1]{inputenc}
+
+\usepackage[pdftex,
+        colorlinks=true,
+        urlcolor=rltblue,       % \href{...}{...} external (URL)
+        filecolor=rltgreen,     % \href{...} local file
+        linkcolor=rltred,       % \ref{...} and \pageref{...}
+        pdftitle={Untitled},
+        pdfauthor={b3j0f},
+        pdfsubject={D\'emonstration de la conjecture de Syracuse},
+        pdfkeywords={syracuse godaltz demonstration conjecture},
+        pdfadjustspacing=1,
+        pagebackref,
+        pdfpagemode=None,
+        bookmarksopen=true]{hyperref}
+
+\title{D\'emonstration de la conjecture de Syracuse}
+\author{b3j0f}
+\date{\today}
+
+\begin{document}\label{start}
+
+\maketitle
+
+\section{Problème}
+
+La conjecture de syracuse veut que :
+
+Soit la suite d'entiers naturels non nuls $U_n$ tel que:
+
+\[U_{n+1} = \left\{
+\begin{array}{l l}
+  U_n/2 & \quad \text{si $U_n$ est pair}\\
+  3Un+1 & \quad \text{si $U_n$ est impair}\\ \end{array} \right. \]
+
+Alors $\forall U_n \in N$, $\exists m > n$ tel que $U_m = 1$.
+
+\section{D\'emonstration}
+
+D\'emonstration par r\'ecurrence du comportement de $U_n$ dans les sous-ensembles $R$ d'entiers ferm\'es $[2^m; 2^{m+2}[$ o\`u $m$ est pair et $\in N$.
+
+Observons le comportement de $U_n$ sur les ensembles $R0=[1; 4[$, $R1=[4; 16[$ et $R2=[16; 64[$.
+
+Pour observer ce comportement, je ne m'attarderai que sur les valeurs impairs de $U_n$. C'est pourquoi je vais d\'efinir la fonction $F: N* -> N*$ telle que :
+
+\[F(x) = \left\{
+\begin{array}{l l}
+  F(x/2) & \quad \text{si $x$ est pair}\\
+  x & \quad \text{si $x$ est impair}\\ \end{array} \right. \]
+
+Les tableaux suivants comprennent tous les entiers impairs de $R0$, $R1$, et $R2$, avec respectivement la valeur de $F$, un indicatif de série \b{remarquable} que j'expliquerai par la suite.
+
+\begin{tabular}{|c|c|c|}
+	\hline
+	$R0$ & $F$ & Serie \\
+	\hline
+	1 & 1 & 2 \\
+	\hline
+	3 & 5 & 1 \\
+	\hline
+\end{tabular}
+
+\begin{tabular}{|c|c|c|}
+	\hline
+	$R1$ & $F$ & Serie \\
+	\hline
+	5 & 1 & 3 \\
+	\hline
+	7 & 11 & 1 \\
+	\hline
+	9 & 7 & 2 \\
+	\hline
+	11 & 17 & 1 \\
+	\hline
+	13 & 5 & 3 \\
+	\hline
+	15 & 23 & 1 \\
+	\hline
+\end{tabular}
+
+\begin{tabular}{|c|c|c|}
+	\hline
+	$R2$ & $F$ & Serie \\
+	\hline
+	17 & 13 & 2 \\
+	\hline
+	19 & 29 & 1 \\
+	\hline
+	21 & 1 & 3 \\
+	\hline
+	23 & 35 & 1 \\
+	\hline
+	25 & 19 & 2 \\
+	\hline
+	27 & 41 & 1 \\
+	\hline
+	29 & 11 & 3 \\
+	\hline
+	31 & 47 & 1 \\
+	\hline
+	33 & 25 & 2 \\
+	\hline
+	35 & 53 & 1 \\
+	\hline
+	37 & 7 & 3 \\
+	\hline
+	39 & 59 & 1 \\
+	\hline
+	41 & 31 & 2 \\
+	\hline
+	43 & 65 & 1 \\
+	\hline
+	45 & 17 & 3 \\
+	\hline
+	47 & 71 & 1 \\
+	\hline
+	49 & 37 & 2 \\
+	\hline
+	51 & 77 & 1 \\
+	\hline
+	53 & 5 & 3 \\
+	\hline
+	55 & 83 & 1 \\
+	\hline
+	57 & 43 & 2 \\
+	\hline
+	59 & 89 & 1 \\
+	\hline
+	61 & 23 & 3 \\
+	\hline
+	63 & 95 & 1 \\
+	\hline
+\end{tabular}
+
+\subsection{D\'ecoupage de $R$ en sous-s\'eries remarquables}
+
+Afin de mieux isoler des comportements r\'eccursifs de la suite $U_n$, je vais transformer l'ensemble des entiers naturels en trois suites bien distinctes (sans collision).
+
+\subsubsection{Suite 1 : $S_{1,n}$}
+
+Premi\`erement, int\'eressons-nous \`a la suite 1.
+
+Cette suite a plusieurs propri\'et\'es remarquables :
+
+\paragraph{Valeurs}
+
+Ses valeurs correspondent à la fonction lin\'eaire $y = 3 + 4x$, $\forall n \in N$.
+
+Par exemple :
+
+\begin{itemize}
+	\item $3 = 4 + 4 * 0$
+	\item $7 = 3 + 4 * 1$
+	\item $11 = 3 + 4 * 2$
+	\item etc.
+\end{itemize}
+
+\paragraph{Application de $F$}
+
+L'application de $F$ est donn\'e par la fonction lin\'eaire $y = 5 + 6x$, $\forall x \in N$.
+
+Par exemple, pour :
+
+\begin{itemize}
+	\item $F(3) = 5 = 5 + 6 * 0$
+	\item $F(7) = 11 = 5 + 6 * 1$
+	\item $F(11) = 17 = 5 + 6 * 2$
+\end{itemize}
+
+Et pour tout $S_{1,n}$, on a $F_n(S_{1,n}) = S_{1,n} * 2 - 2 * n - 1$.
+
+\subsubsection{Serie 2 : $S_{2,n}$}
+
+La seconde suite est tr\`es proche de la premi\`ere.
+
+\paragraph{Valeurs}
+
+Les valeurs de cette suite sont d\'etermin\'ees par la fonction lin\'eaire $y = 1 + 8x$, $\forall x \in N$.
+
+Par exemple :
+
+\begin{itemize}
+	\item $1 = 1 + 8 * 0$
+	\item $9 = 1 + 8 * 1$
+	\item $17 = 1 + 8 * 2$
+\end{itemize}
+
+\paragraph{Application de $F$}
+
+L'application de $F$ correspond \`a la fonction lin\'eaire $y = 1 + 6x$, $\forall x \in N$.
+
+Par exemple :
+
+\begin{itemize}
+	\item $F(1) = 1 = 1 + 6 * 0$
+	\item $F(9) = 7 = 1 + 6 * 1$
+	\item $F(17) = 13 = 1 + 6 * 2$
+\end{itemize}
+
+Et pour tout \'el\'ement de $S_2$, on a $F(S_{2,n}) = S_{2,n} * 2  - 2 * n$.
+
+\subsubsection{Suite 3 : $S_{3,n}$}
+
+Cette derni\`ere s\'erie est plus particuli\`ere.
+
+\paragraph{Valeurs}
+
+Les valeurs de $S_{3,n}$ sont d\'etermin\'ees par la fonction lin\'eaire $y = 5 + 8n$, $\forall n \in N$.
+
+Par exemple :
+
+\begin{itemize}
+	\item $5 = 5 + 8 * 0$
+	\item $13 = 5 + 8 * 1$
+	\item $21 = 5 + 8 * 2$
+	\item $29 = 5 + 8 * 3$
+	\item $37 = 5 + 8 * 4$
+	\item $45 = 5 + 8 * 5$
+	\item $53 = 5 + 8 * 6$
+	\item $61 = 5 + 8 * 7$
+\end{itemize}
+
+\paragraph{Application de $F$}
+
+Contrairement aux pr\'ec\'edentes suites, cette fois, l'application de $F$ n'est pas lin\'eaire mais successivement croissante et d\'ecroissante.
+
+Par ailleurs, l'application de $F$ provient directement des applications de $F$ dans l'ensemble $R_x$, $x \in N$ qui pr\'ec\'ede celui de $S_{3,n}$.
+
+On a donc : $F(S_{3,n}) = F(\frac{S_{3,n} - 1}{4})$
+
+Par exemple :
+
+\begin{itemize}
+	\item $F(21) = F(\frac{21 - 1}{4}) = F(5) = 1$
+	\item $F(29) = F(\frac{29 - 1}{4}) = F(7) = 11$
+	\item $F(37) = F(\frac{37 - 1}{4}) = F(9) = 7$
+	\item $F(45) = F(\frac{45 - 1}{4}) = F(11) = 17$
+	\item $F(53) = F(\frac{53 - 1}{4}) = F(13) = 5$
+	\item $F(61) = F(\frac{61 - 1}{4}) = F(15) = 23$
+\end{itemize}
+
+\subsection{Conclusion}
+
+Par l'observation, nous avons montr\'e un d\'ecoupage de l'ensemble $N$ en sous-ensembles $R_x$, $x$ pair et $\in N$.
+Dans ces sous-ensembles, nous avons observer des suites disjointes qui couvrent l'ensemble des entiers non nuls en appliquant la fonction $F$.
+
+De plus, nous avons un cycle comportemental de ces suites tel que :
+
+Les suites $S_{1,n}, S_{2,n} et S_{3,n}$ se suivent successivement et recursivement dans cet ordre :
+
+$\{S_{2,n}, S_{1,n}, S_{3,n}, S_{1,n}\}$.
+
+De plus, nous avons un respect des proportions o\`u $\forall x \in N$, $|R_x| * 2 = |R_{x+1}|$
+
+En sachant que pour $R_0$, toutes les valeurs de cet ensemble valident la conjecture de Syracuse et que $R_1$ est valid\'e par proportionalit\'e des comportements alors par r\'ecurrence, la conjecture de Syracuse est vrai quelque soit l'ensemble $R_x$ et donc par transivit\'e sur $N*$.
+
+\label{end}\end{document}

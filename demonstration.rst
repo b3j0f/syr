@@ -8,10 +8,10 @@ Problème
 
 Conjecture de syracuse
 
-Série Un tel que:
+Suite d'entiers naturels Un tel que:
 
-Un+1 = Un/2 si Un est pair
-Un+1 = 3Un + 1 si Un est impair
+U(n+1) = Un/2 si Un est pair
+U(n+1) = 3Un + 1 si Un est impair
 
 Alors pour tout Un dans N*, il existe m > n tel que Um = 1.
 
@@ -30,6 +30,16 @@ Observons le comportement de la série sur les ensembles R0=[1; 2[, R1=[2; 4[, R
 	je ne prendrai que les nombres impairs car les nombres pairs d'un ensembleRx auront été calculés en fonction du sous-ensemble R(x-1).
 
 Le tableau suivant comprend tous les entiers de 1 à 63, qui sont assimilés à des valeurs de Un. Ces valeurs de la suite sont suivis de la prochaine itération impair *Um*, avec un indicatif de série *remarquable* que j'expliquerai par la suite. Finalement, la durée du vol par valeur impairt est également donnée.
+
+Soit la fonction F: N* -> N*, x |-> x si x impair, sinon F(x/2)
+
+Et
+
+Um correspond à la fonction F: N -> N
+
+x |-> F(3x + 1)
+
+x |-> x si x impair, sinon F(x/2)
 
 .. csv-table:: R0 et R1
 	:header: Un, Um, Serie, vol
@@ -202,6 +212,11 @@ Par exemple :
 - Un = 5 = 5 + 8 * 0
 - Un = 13 = 5 + 8 * 1
 - Un = 21 = 5 + 8 * 2
+- Un = 29 = 5 + 8 * 3
+- Un = 37 = 5 + 8 * 4
+- Un = 45 = 5 + 8 * 5
+- Un = 53 = 5 + 8 * 6
+- Un = 61 = 5 + 8 * 7
 - etc.
 
 Um
@@ -212,6 +227,12 @@ Les valeurs de Um correspondent à la suite successive des valeurs de Um observ�
 Par exemple :
 
 Sur R4 et R5
+
+.. csv-table::
+
+	Un, F(Un)
+
+- Un = 21, n = 1,
 
 - Un = {21, 29, 37, 45, 53}, Um = {1, 11, 7, 17, 5}
 
