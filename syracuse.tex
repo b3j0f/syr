@@ -25,7 +25,7 @@
 
 \maketitle
 
-\section{Problème}
+\section{Probl\`eme}
 
 La conjecture de syracuse veut que :
 
@@ -51,7 +51,7 @@ Pour observer ce comportement, je ne m'attarderai que sur les valeurs impairs de
   F(x/2) & \quad \text{si $x$ est pair}\\
   x & \quad \text{si $x$ est impair}\\ \end{array} \right. \]
 
-Les tableaux suivants comprennent tous les entiers impairs de $R0$, $R1$, et $R2$, avec respectivement la valeur de $F$, un indicatif de série \b{remarquable} que j'expliquerai par la suite.
+Les tableaux suivants comprennent tous les entiers impairs de $R0$, $R1$, et $R2$, avec respectivement la valeur de $F$, un indicatif de s\'erie \b{remarquable} que j'expliquerai par la suite.
 
 \begin{tabular}{|c|c|c|}
 	\hline
@@ -135,9 +135,9 @@ Les tableaux suivants comprennent tous les entiers impairs de $R0$, $R1$, et $R2
 	\hline
 \end{tabular}
 
-\subsection{D\'ecoupage de $R$ en sous-s\'eries remarquables}
+\subsection{D\'ecoupage de $R$ en suites remarquables}
 
-Afin de mieux isoler des comportements r\'eccursifs de la suite $U_n$, je vais transformer l'ensemble des entiers naturels en trois suites bien distinctes (sans collision).
+Afin de mieux isoler des comportements r\'ecursifs de la suite $U_n$, je vais transformer l'ensemble des entiers naturels en trois suites bien distinctes (sans collision).
 
 \subsubsection{Suite 1 : $S_{1,n}$}
 
@@ -147,7 +147,7 @@ Cette suite a plusieurs propri\'et\'es remarquables :
 
 \paragraph{Valeurs}
 
-Ses valeurs correspondent à la fonction lin\'eaire $y = 3 + 4x$, $\forall n \in N$.
+Ses valeurs correspondent \`a la fonction lin\'eaire $y = 3 + 4x$, $\forall x \in N$.
 
 Par exemple :
 
@@ -160,14 +160,15 @@ Par exemple :
 
 \paragraph{Application de $F$}
 
-L'application de $F$ est donn\'e par la fonction lin\'eaire $y = 5 + 6x$, $\forall x \in N$.
+L'application de $F$ est donn\'ee par la fonction lin\'eaire $y = 5 + 6x$, $\forall x \in N$.
 
-Par exemple, pour :
+Par exemple :
 
 \begin{itemize}
 	\item $F(3) = 5 = 5 + 6 * 0$
 	\item $F(7) = 11 = 5 + 6 * 1$
 	\item $F(11) = 17 = 5 + 6 * 2$
+	\item etc.
 \end{itemize}
 
 Et pour tout $S_{1,n}$, on a $F_n(S_{1,n}) = S_{1,n} * 2 - 2 * n - 1$.
@@ -204,7 +205,7 @@ Et pour tout \'el\'ement de $S_2$, on a $F(S_{2,n}) = S_{2,n} * 2  - 2 * n$.
 
 \subsubsection{Suite 3 : $S_{3,n}$}
 
-Cette derni\`ere s\'erie est plus particuli\`ere.
+Cette derni\`ere suite est plus particuli\`ere.
 
 \paragraph{Valeurs}
 
@@ -227,7 +228,7 @@ Par exemple :
 
 Contrairement aux pr\'ec\'edentes suites, cette fois, l'application de $F$ n'est pas lin\'eaire mais successivement croissante et d\'ecroissante.
 
-Par ailleurs, l'application de $F$ provient directement des applications de $F$ dans l'ensemble $R_x$, $x \in N$ qui pr\'ec\'ede celui de $S_{3,n}$.
+Par ailleurs, l'application de $F$ provient directement des applications de $F$ dans l'ensemble $R_{x-1}$, $x \in N$ qui pr\'ec\'ede celui de $S_{3,n} \in R_x$.
 
 On a donc : $F(S_{3,n}) = F(\frac{S_{3,n} - 1}{4})$
 
@@ -244,17 +245,17 @@ Par exemple :
 
 \subsection{Conclusion}
 
-Par l'observation, nous avons montr\'e un d\'ecoupage de l'ensemble $N$ en sous-ensembles $R_x$, $x$ pair et $\in N$.
-Dans ces sous-ensembles, nous avons observer des suites disjointes qui couvrent l'ensemble des entiers non nuls en appliquant la fonction $F$.
+Par l'observation, nous avons montr\'e un d\'ecoupage de l'ensemble $N$ en sous-ensembles $R_x$, $x \in N$.
+Dans ces sous-ensembles, nous avons observ\'e des suites disjointes qui couvrent l'ensemble des entiers non nuls en appliquant la fonction $F$.
 
 De plus, nous avons un cycle comportemental de ces suites tel que :
 
 Les suites $S_{1,n}, S_{2,n} et S_{3,n}$ se suivent successivement et recursivement dans cet ordre :
 
-$\{S_{2,n}, S_{1,n}, S_{3,n}, S_{1,n}\}$.
+$\{S_{2,n}, S_{1,n}, S_{3,n}, S_{1,n+1}\}$.
 
 De plus, nous avons un respect des proportions o\`u $\forall x \in N$, $|R_x| * 2 = |R_{x+1}|$
 
-En sachant que pour $R_0$, toutes les valeurs de cet ensemble valident la conjecture de Syracuse et que $R_1$ est valid\'e par proportionalit\'e des comportements alors par r\'ecurrence, la conjecture de Syracuse est vrai quelque soit l'ensemble $R_x$ et donc par transivit\'e sur $N*$.
+En sachant que pour $R_0$, toutes les valeurs de cet ensemble valident la conjecture de Syracuse et que $R_1$ est valid\'e par proportionalit\'e des comportements alors par r\'ecurrence, la conjecture de Syracuse est vrai quelque soit l'ensemble $R_x$, $\forall x \in N$ et donc par transivit\'e sur $N*$.
 
 \label{end}\end{document}
